@@ -7,7 +7,7 @@ namespace RandomMelodyGenerator.Core.ViewModels
     {
         private IGeneratorService generatorService;
 
-        MainViewModel(IGeneratorService generatorService):
+        public MainViewModel(IGeneratorService generatorService):
             base()
         {
             this.generatorService = generatorService;
