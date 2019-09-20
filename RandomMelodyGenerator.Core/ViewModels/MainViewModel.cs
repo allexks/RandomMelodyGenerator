@@ -3,7 +3,7 @@ using RandomMelodyGenerator.Core.Services.Interfaces;
 
 namespace RandomMelodyGenerator.Core.ViewModels
 {
-    class MainViewModel: MvxViewModel
+    public class MainViewModel: MvxViewModel
     {
         private IGeneratorService generatorService;
 

@@ -2,7 +2,7 @@
 
 namespace RandomMelodyGenerator.Core.Services
 {
-    class GeneratorService: IGeneratorService
+    public class GeneratorService: IGeneratorService
     {
         // TODO: Implement interface
     }

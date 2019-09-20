@@ -6,7 +6,7 @@ using RandomMelodyGenerator.Core.ViewModels;
 
 namespace RandomMelodyGenerator.Core
 {
-    class App: MvxApplication
+    public class App: MvxApplication
     {
         public override void Initialize()
         {

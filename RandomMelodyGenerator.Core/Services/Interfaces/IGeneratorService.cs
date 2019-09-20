@@ -1,6 +1,6 @@
 ﻿namespace RandomMelodyGenerator.Core.Services.Interfaces
 {
-    interface IGeneratorService
+    public interface IGeneratorService
     {
         // TODO: define interface
     }
