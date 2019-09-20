@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMelodyGenerator.Core"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMelodyGenerator.iOS", "RandomMelodyGenerator.iOS\RandomMelodyGenerator.iOS.csproj", "{F8E5D477-F576-4179-841F-F4134A8E00D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomMelodyGenerator.Droid", "RandomMelodyGenerator.Droid\RandomMelodyGenerator.Droid.csproj", "{9BAD8084-2832-49AD-902A-68AD02097543}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,17 @@ Global
 		{F8E5D477-F576-4179-841F-F4134A8E00D5}.Debug|iPhone.Build.0 = Debug|iPhone
 		{F8E5D477-F576-4179-841F-F4134A8E00D5}.Release|iPhone.ActiveCfg = Release|iPhone
 		{F8E5D477-F576-4179-841F-F4134A8E00D5}.Release|iPhone.Build.0 = Release|iPhone
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{9BAD8084-2832-49AD-902A-68AD02097543}.Release|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
