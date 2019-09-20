@@ -1,15 +1,13 @@
 ﻿using Foundation;
+using MvvmCross.Platforms.Ios.Core;
+using RandomMelodyGenerator.Core;
 using UIKit;
 
 namespace RandomMelodyGenerator.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
-    [Register("AppDelegate")]
-    public class AppDelegate : UIApplicationDelegate
+    [Register(nameof(AppDelegate))]
+    public class AppDelegate : MvxApplicationDelegate<MvxIosSetup<App>, App>
     {
-        // class-level declarations
-
         public override UIWindow Window
         {
             get;
@@ -18,10 +16,7 @@ namespace RandomMelodyGenerator.iOS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
-
-            return true;
+            return base.FinishedLaunching(application, launchOptions);
         }
 
         public override void OnResignActivation(UIApplication application)
