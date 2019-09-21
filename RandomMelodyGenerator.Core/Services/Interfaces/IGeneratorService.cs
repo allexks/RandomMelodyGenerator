@@ -1,7 +1,12 @@
-﻿namespace RandomMelodyGenerator.Core.Services.Interfaces
+﻿using RandomMelodyGenerator.Core.Models;
+using System.Collections.Generic;
+
+namespace RandomMelodyGenerator.Core.Services.Interfaces
 {
     public interface IGeneratorService
     {
-        // TODO: define interface
+        public IEnumerable<Note> GenerateRandomRhythm(Tempo tempo, uint numberOfMeasures = 1, TimeSignature timeSignature = TimeSignature.FourFour);
+        public IEnumerable<Note> GenerateRandomMelody(IEnumerable<Note> notes);
+        public IEnumerable<Note> GenerateRandomMelody(Scale scale, Tempo tempo, uint numberOfMeasures = 1, TimeSignature timeSignature = TimeSignature.FourFour);
     }
 }
