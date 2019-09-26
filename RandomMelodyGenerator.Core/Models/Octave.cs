@@ -2,14 +2,14 @@
 {
     public enum Octave
     {
-        CONTRABASS = 0,
-        BASS = 1,
-        BIG = 2,
-        SMALL = 3,
-        FIRST = 4,
-        SECOND = 5,
-        THIRD = 6,
-        FOURTH = 7,
-        FIFTH = 8
+        Contrabass = 0,
+        Bass = 1,
+        Big = 2,
+        Small = 3,
+        First = 4,
+        Second = 5,
+        Third = 6,
+        Fourth = 7,
+        Fifth = 8
     }
 }
