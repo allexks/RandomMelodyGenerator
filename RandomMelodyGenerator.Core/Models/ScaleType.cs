@@ -40,6 +40,7 @@ namespace RandomMelodyGenerator.Core.Models
         public static ScaleType MelodicMinor = new ScaleType(new List<Interval> { 2, 1, 2, 2, 2, 2, 1 });
         public static ScaleType HarmonicMinor = new ScaleType(new List<Interval> { 2, 1, 2, 2, 1, 3, 1 });
         public static ScaleType PhrygianDominant = HarmonicMinor.GetNthMode(5);
+        public static ScaleType AlteredDorian = HarmonicMinor.GetNthMode(4);
         public static ScaleType BiharmonicMinor = new ScaleType(new List<Interval> { 2, 1, 3, 1, 1, 3, 1 });
         public static ScaleType BiharmonicMajor = BiharmonicMinor.GetNthMode(5);
 
