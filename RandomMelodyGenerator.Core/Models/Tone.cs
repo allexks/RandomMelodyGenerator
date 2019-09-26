@@ -15,6 +15,30 @@ namespace RandomMelodyGenerator.Core.Models
 
         public double PitchInHertz => GetPitchInFirstOctaveInHertz(Name) * Math.Pow(2, Octave.First - Octave);
 
+        public Tone TransposeUp(Interval interval)
+        {
+            var newToneName = (ToneName)(((int)Name + interval.Semitones) % 12);
+            var newOctave = (Octave)((int)Octave + (interval.Semitones / 12));
+            return new Tone(newToneName, newOctave);
+        }
+
+        public Tone TransposeDown(Interval interval)
+        {
+            var newToneName = (ToneName)(((int)Name - interval.Semitones) % 12);
+            var newOctave = (Octave)((int)Octave - (interval.Semitones / 12));
+            return new Tone(newToneName, newOctave);
+        }
+
+        public static ToneName TransposeUp(ToneName toneName, Interval interval)
+        {
+            return new Tone(toneName, Octave.First).TransposeUp(interval).Name;
+        }
+
+        public static ToneName TransposeDown(ToneName toneName, Interval interval)
+        {
+            return new Tone(toneName, Octave.First).TransposeDown(interval).Name;
+        }
+
         private double GetPitchInFirstOctaveInHertz(ToneName tone)
         {
             switch (tone)

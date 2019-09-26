@@ -7,17 +7,20 @@ namespace RandomMelodyGenerator.Core.Services
     public class GeneratorService : IGeneratorService
     {
         // TODO: Implement interface and create algorithm
-        public IEnumerable<Note> GenerateRandomMelody(IEnumerable<Note> notes)
+
+        public TimeSignature TimeSignature { get; set; } = TimeSignature.Common;
+
+        public Measure GenerateRandomMelody(Measure measure)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Note> GenerateRandomMelody(Scale scale, Tempo tempo, uint numberOfMeasures = 1)
+        public Measure GenerateRandomMelody(Scale scale)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Note> GenerateRandomRhythm(Tempo tempo, uint numberOfMeasures = 1)
+        public Measure GenerateRandomRhythm()
         {
             throw new System.NotImplementedException();
         }

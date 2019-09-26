@@ -3,7 +3,7 @@
     public struct TimeSignature
     {
         public uint UpperNumber { get; }
-        public uint LowerNumber { get; }
+        public ReversedNoteValue LowerNumber { get; }
 
         public TimeSignature(uint upperNumber = 4, uint lowerNumber = 4)
         {
