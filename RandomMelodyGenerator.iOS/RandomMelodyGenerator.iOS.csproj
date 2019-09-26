@@ -135,7 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RandomMelodyGenerator.Core\RandomMelodyGenerator.Core.csproj">
-      <Project>{5049F83F-6A7C-4D19-A10E-DE7F3A1EE6FC}</Project>
+      <Project>{D778D48B-4ED0-4690-902A-077611E1F2BF}</Project>
       <Name>RandomMelodyGenerator.Core</Name>
     </ProjectReference>
   </ItemGroup>

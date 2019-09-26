@@ -1,4 +1,4 @@
-﻿using MvvmCross;
+using MvvmCross;
 using MvvmCross.ViewModels;
 using RandomMelodyGenerator.Core.Services;
 using RandomMelodyGenerator.Core.Services.Interfaces;

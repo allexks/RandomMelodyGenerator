@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RandomMelodyGenerator.Core.Models
 {
@@ -13,6 +14,7 @@ namespace RandomMelodyGenerator.Core.Models
             Quality = quality;
             Number = number;
             Semitones = CalculateIntervalSemitones(quality, number);
+            CheckForMusicalNonsense();
         }
 
         public Interval(int semitones)
@@ -23,6 +25,7 @@ namespace RandomMelodyGenerator.Core.Models
         }
 
         // Helpers
+
         private int GetSemitonesToPerfectOrMajor(IntervalNumber number)
         {
             switch (number)
@@ -44,7 +47,7 @@ namespace RandomMelodyGenerator.Core.Models
                 case IntervalNumber.Octave:
                     return 12;
                 default:
-                    throw new NotImplementedException();
+                    throw new IntervalNotValidException(this);
             }
         }
 
@@ -62,7 +65,7 @@ namespace RandomMelodyGenerator.Core.Models
                 case IntervalQuality.Augmented:
                     return +1;
                 default:
-                    throw new NotImplementedException();
+                    throw new IntervalNotValidException(this);
             }
         }
 
@@ -70,6 +73,46 @@ namespace RandomMelodyGenerator.Core.Models
         {
             return GetSemitonesToPerfectOrMajor(number) + GetOffsetToPerfectOrMajorInSemitones(quality);
         }
+
+        private static List<IntervalNumber> PerfectIntervals = new List<IntervalNumber> {
+            IntervalNumber.Unison,
+            IntervalNumber.Fourth,
+            IntervalNumber.Fifth,
+            IntervalNumber.Octave
+        };
+
+        private void CheckForMusicalNonsense()
+        {
+            if (Quality == null || Number == null)
+            {
+                return;
+            }
+
+            var number = Number.Value;
+            var quality = Quality.Value;
+
+            if ((PerfectIntervals.Contains(number) && (quality == IntervalQuality.Major || quality == IntervalQuality.Minor))
+                || (!PerfectIntervals.Contains(number) && (quality == IntervalQuality.Perfect)))
+            {
+                throw new IntervalNotValidException(this);
+            }
+        }
+
+        // Convenience static methods and definitions
+
+        public static implicit operator int(Interval interval)
+        {
+            return interval.Semitones;
+        }
+
+        public static implicit operator Interval(int semitones)
+        {
+            return new Interval(semitones);
+        }
+
+        public static Interval Semitone = 1;
+        public static Interval WholeTone = 2;
+        public static Interval Tritone = 6;
     }
 
     public enum IntervalQuality
@@ -91,5 +134,13 @@ namespace RandomMelodyGenerator.Core.Models
         Sixth = 6,
         Seventh = 7,
         Octave = 8
+    }
+
+    public class IntervalNotValidException: Exception
+    {
+        public IntervalNotValidException(Interval interval):
+            base($"Interval {interval.ToString()} is not valid.")
+        {
+        }
     }
 }
