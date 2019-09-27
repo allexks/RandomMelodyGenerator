@@ -7,7 +7,7 @@ namespace RandomMelodyGenerator.Core.Services.Interfaces
     {
         public TimeSignature TimeSignature { get; set; }
         public Measure GenerateRandomRhythm();
-        public Measure GenerateRandomMelody(Measure measure);
+        public Measure GenerateRandomMelody(Measure measure, Scale scale);
         public Measure GenerateRandomMelody(Scale scale);
     }
 }

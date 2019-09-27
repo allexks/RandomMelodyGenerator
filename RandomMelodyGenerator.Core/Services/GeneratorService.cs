@@ -6,23 +6,31 @@ namespace RandomMelodyGenerator.Core.Services
 {
     public class GeneratorService : IGeneratorService
     {
-        // TODO: Implement interface and create algorithm
-
         public TimeSignature TimeSignature { get; set; } = TimeSignature.Common;
 
-        public Measure GenerateRandomMelody(Measure measure)
+        public Measure GenerateRandomMelody(Measure measure, Scale scale)
         {
-            throw new System.NotImplementedException();
+            // TODO: Melody generation goes here
+
+            return measure;
         }
 
         public Measure GenerateRandomMelody(Scale scale)
         {
-            throw new System.NotImplementedException();
+            return GenerateRandomMelody(GenerateRandomRhythm(), scale);
         }
 
         public Measure GenerateRandomRhythm()
         {
-            throw new System.NotImplementedException();
+            var result = new List<Note>();
+
+            // TODO: Rhythm generation algorithm goes here
+
+            return new Measure
+            {
+                Notes = result,
+                TimeSignature = TimeSignature
+            };
         }
     }
 }
